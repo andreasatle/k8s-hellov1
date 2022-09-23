@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+  labels:
+    component: hello-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: hello-pod
+  template:
+    metadata:
+      labels:
+        component: hello-pod
+    spec:
+      containers:
+      - name: hello-pod
+        image: andreasatle/hellov1
+        ports:
+        - containerPort: 3000

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-nodeport-deployment
+  labels:
+    component: hello-nodeport-deployment
+spec:
+  type: NodePort
+  selector:
+    component: hello-deployment
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 3000
+    nodePort: 30002

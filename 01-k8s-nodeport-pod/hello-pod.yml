@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    component: hello-pod
+spec:
+  containers:
+  - name: hello-container
+    image: andreasatle/hellov1
+    ports:
+    - containerPort: 3000
